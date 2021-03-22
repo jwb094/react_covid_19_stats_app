@@ -1,0 +1,46 @@
+{
+  "name": "covid-19-stats-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.1",
+    "axios": "^0.21.1",
+    "axois": "0.0.1-security",
+    "bootstrap": "^4.6.0",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.1",
+    "react-columns": "^1.2.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.0"
+  },
+  "scripts": {
+    "start": "./node_modules/react-scripts/bin/react-scripts.js start",
+    "start:prod": "pushstate-server build",
+    "build": "./node_modules/react-scripts/bin/react-scripts.js build",
+    "test": "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
+    "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
+    "server": "cd client/api && pm2 start server.js --watch",
+    "proxy": "http://128.199.139.144:3000"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
