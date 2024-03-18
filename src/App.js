@@ -11,6 +11,7 @@ function App() {
   //use 
   const [latest,setLatest] = useState([]);
   const [results,setresults] = useState([]);
+  const [searchcountries,setSearchCountry] = useState("");
    useEffect(() => { //What to do after rendering
     axios
       .all([
@@ -32,7 +33,12 @@ function App() {
   const date = new Date(parseInt(latest.updated));
   const lastUpdated = date.toString();
 
-  const countries = results.map((data,i) => {
+  const filterCountry = results.filter(item => {
+      return searchcountries !== "" 
+      ? item.country.includes(searchcountries) : item;
+  });
+  //console.log(filterCountry);
+  const countries = filterCountry.map((data,i) => {
     return (
       <Card
       key={i}
@@ -97,7 +103,10 @@ function App() {
       </CardDeck>
       <Form.Group controlId="formGroupSearch">
           <Form.Label column sm="2">Search</Form.Label>
-          <Form.Control size="lg" type="text" placeholder="Enter your desired Country" />
+          <Form.Control size="lg" 
+          type="text" 
+          placeholder="Enter your desired Country"
+          onChange={e => setSearchCountry(e.target.value)} />
           
       </Form.Group>
       
